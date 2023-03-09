@@ -1,45 +1,69 @@
 package com.javalab.class10;
 
 import com.javalab.class10.vo.Department;
+import com.javalab.class10.vo.MakeData;
+import com.javalab.class10.vo.Professor;
 import com.javalab.class10.vo.Student;
+import com.javalab.class10.vo.Takes;
 
 public class SchoolManagementMain {
 
 	public static void main(String[] args) {
 
-		Student[] students = new Student[8];
-		students[0] = new Student("1292001", "900424-1825409", "김광식", 3, "서울", 920);
-		students[1] = new Student("1292002", "900305-2730021", "김정현", 3, "서울", 923);
-		students[2] = new Student("1292003", "891021-2308302", "김현정", 4, "대전", 925);
-		students[3] = new Student("1292301", "880902-2704012", "김정숙", 2, "대구", 923);
-		students[4] = new Student("1292303", "910715-1524390", "박광수", 3, "광주", 920);
-		students[5] = new Student("1292305", "921011-1809003", "김우주", 4, "부산", 925);
-		students[6] = new Student("1292501", "900825-1506390", "박철수", 3, "대전", 923);
-		students[7] = new Student("1292502", "911011-1809003", "백태성", 3, "서울", 925);
-
-		// 학과 데이터 생성
-		Department[] departments = new Department[3];
-		departments[0] = new Department(920, "컴퓨터공학과", "201호");
-		departments[1] = new Department(923, "산업공학과", "207호");
-		departments[2] = new Department(925, "전자공학과", "308호");
+		MakeData md = new MakeData();
+		Student[] students = md.students;
+		Department[] departments = md.departments;
+		Takes[] takes = md.takes;
+		Professor[] professors = md.professors;
 
 		// [문제.1] 전체 학생 명단을 출력하되 학생의 소속 학과를 함께 출력하시오.
-		String name = "";
-		for (Student stu : students) {
-			int code = stu.getDepartment(); // 학과 코드
-			for (Department department : departments) { // departments 에서 하나씩 꺼내서 department 한테 담아준다.
-				if (code == department.getId()) {
-					name = department.getName();
+		System.out.println("============ 1.학생 정보와 소속학과명 ============");
 
+		int tempDeptId = 0;
+		for (Student s : students) {
+			tempDeptId = s.getDepartment(); // 학과 코드
+			for (Department d : departments) { // departments 에서 하나씩 꺼내서 department 한테 담아준다.
+				if (tempDeptId == d.getId()) {
+					System.out.println(s.getId() + " " + s.getJumin() + " " + s.getName() + " " + s.getYear() + " "
+							+ s.getAddress() + " " + s.getDepartment() + " " + d.getName());
 				}
-
 			}
-
-			System.out.println(stu.getId() + " " + stu.getJumin() + " " + stu.getName() + " " + stu.getYear() + " "
-					+ stu.getAddress() + " " + stu.getDepartment() + " " + name);
-
 		}
+		System.out.println(); // 한줄을 띄는 용도
 
-	}
+		// [문제.2] 학생 데이터와 그 학생의 성적을 함께 출력하세요. -학생(Student) + 성적(Takes)
 
+		System.out.println("============ 2.학생(Student)정보 + 성적(Takes) ============");
+		System.out.println(" 학번  \t  이름              주민번호            학년             주소       학과번호      과목코드   성적");
+
+		for (Student stu : md.students) {
+			for (Takes tak : md.takes) {
+				if (stu.getId().equals(tak.getId())) {
+					System.out.println(stu.getId() + "\t" + stu.getName() + "\t" + stu.getJumin() + "\t" + stu.getYear()
+							+ "\t" + stu.getAddress() + "\t" + stu.getDepartment() + "\t" + tak.getSubject() + "\t"
+							+ tak.getScore());
+				}
+			}
+		}
+		System.out.println(); // 한줄을 띄는 용도
+
+		// [문제.3] 컴퓨터공학과 교수들을 모두 조회하세요
+		// 1. 학과배열에서 컴퓨터 공학과 코드를 찾기
+		// 2. 코드로 교수 배열에 해당하는 교수 찾기
+
+		System.out.println("=========== 교수중에서 컴퓨터 공학과 교수들을 모두 조회하시오.===========");
+		String searchDept = "컴퓨터공학과";
+		int dId = 0; // 컴퓨터공학과의 id 저장용 변수
+		for (Department dept : md.departments) {
+			if (dept.getName().equals(searchDept)) {
+				dId = dept.getId(); // 컴퓨터 공학과 id
+			}
+		}
+		for (Professor pro : md.professors) {
+			if (pro.getDepartment() == dId) {
+				System.out.println(pro.getId() + "\t" + pro.getJumin() + "\t" + pro.getName() + "\t"
+						+ pro.getDepartment() + "\t" + searchDept);
+			}
+		}
+	} // end main
 }
