@@ -4,10 +4,14 @@ public class DepartmentMain {
 	public static void main(String[] args) {
 
 		// Department type의 배열 변수 departments
-		Department[] departments = new Department[3];
+//		 Department[] departments = new Department[3];
+
+		// DepartmentData 객체 생성
+		DepartmentData dd = new DepartmentData(); // DepartmentData 객체의 주소가 dd 저장됨
+		Department[] departments = dd.departments; // DepartmentData 객체의 필드를 갖고옴
 
 		// 기초데이터 생성
-		initData(departments);
+//		 initData(departments);
 
 		// [문제.1] 학과 목록을 출력하시오.
 		printDepartment(departments);
@@ -17,7 +21,7 @@ public class DepartmentMain {
 
 		// [문제.3] 컴퓨터공학과의 교실을 조회해서 main메소드에서 출력하세요.
 		String office = getOffice(departments);
-			System.out.println("컴퓨터공학과 교실은" + " " + office + " " + "입니다");
+		System.out.println("컴퓨터공학과 교실은" + " " + office + " " + "입니다");
 
 	} // end main
 
@@ -53,7 +57,7 @@ public class DepartmentMain {
 
 	// [문제.3] 컴퓨터공학과의 교실을 조회해서 main메소드에서 출력하세요.
 	private static String getOffice(Department[] departments) {
-		
+
 		String arrName = "";
 		for (Department department : departments) {
 			if (department.getName().equals("컴퓨터공학과")) {
@@ -62,9 +66,8 @@ public class DepartmentMain {
 			}
 
 		}
-	String name = arrName;
-	return name;
+		String name = arrName;
+		return name;
 	}
 
 }
-

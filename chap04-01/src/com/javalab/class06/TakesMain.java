@@ -9,9 +9,11 @@ public class TakesMain {
 	public static void main(String[] args) {
 
 		// 성적 객체를 담을 Takes 타입 배열 선언(12칸)
-		Takes[] takes = new Takes[12];
+//		Takes[] takes = new Takes[12];
+		TakesData tt = new TakesData();
+		Takes[] takes = tt.takes;
 
-		initData(takes);
+//		initData(takes);
 
 		// 1. 전학생 성적 출력(toString 메소드 이용)
 		printTakes(takes);
@@ -48,6 +50,9 @@ public class TakesMain {
 		for (Takes t2 : takes) {
 			System.out.println(t2.getId() + " " + t2.getSubject() + " " + t2.getScore());
 
+		}
+		for (Takes takes2 : takes) {
+			
 		}
 
 		System.out.println();
