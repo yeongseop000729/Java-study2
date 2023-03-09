@@ -53,10 +53,11 @@ public class TakesMain {
 		}
 		for (Takes takes2 : takes) {
 			
-		Takes[] takes = new Takes[12];
+		Takes[] takes3 = new Takes[12];
 
 		initData(takes);
 
+		// 기다려봐 나 수업 ㅅㅂ 코드 하나도 못치는중
 		// 1. 전학생 성적 출력(toString 메소드 이용)
 		printTakes(takes);
 
@@ -66,11 +67,11 @@ public class TakesMain {
 			System.out.println(string);
 
 		}
+		}
 	}
-		
 
 	// 성적 데이터 생성
-	private static void initData(Takes[] takes) {
+	private static void initData2(Takes[] takes) {
 
 		// 성적 객체를 생성하면서 배열에 바로 저장
 		takes[0] = new Takes("1292001", "C101-01", "B+");
@@ -88,7 +89,7 @@ public class TakesMain {
 	}
 
 	// 1. 전학생 성적 출력(toString 메소드 이용)
-	private static void printTakes(Takes[] takes) {
+	private static void printTakes2(Takes[] takes) {
 		for (Takes t2 : takes) {
 			System.out.println(t2.getId() + " " + t2.getSubject() + " " + t2.getScore());
 
@@ -110,4 +111,3 @@ public class TakesMain {
 		return arrName;
 	}
 }
-	
