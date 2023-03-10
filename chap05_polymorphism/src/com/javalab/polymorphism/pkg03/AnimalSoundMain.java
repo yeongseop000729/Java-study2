@@ -11,9 +11,11 @@ public class AnimalSoundMain {
 		AnimalSound animalSounds = new AnimalSound();
 		Animal dog = new Dog(); // 자식 객체를 생성해서 부모 타입에 저장 (다형성)
 		Animal cat = new Cat(); // 자식 객체를 생성해서 부모 타입에 저장 (다형성)
+		Animal Lion = new Lion(); // 자식 객체를 생성해서 부모 타입에 저장 (다형성)
 		
 		// 동물울음소리 구현 객체의 메소드에 객체 전달
 		animalSounds.makeAnimalSound(dog);
 		animalSounds.makeAnimalSound(cat);
+		animalSounds.makeAnimalSound(Lion);
 	}
 }
