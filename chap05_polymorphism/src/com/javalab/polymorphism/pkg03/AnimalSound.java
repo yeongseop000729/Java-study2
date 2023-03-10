@@ -7,7 +7,7 @@ package com.javalab.polymorphism.pkg03;
 public class AnimalSound {
 
 	// 매개변수의 다형성 : 파라미터로 지정된 타입의 자식들은 누구라도 받을 수 있음.
-	public void makeAnimalSound(Animal animal) {
+	public void makeAnimalSound(Animal animal) { // 자동 타입 변환(tiger -> Animal type)
 
 		// 파라미터로 전달된 객체의 오버라이딩된 메소드 자동 호출
 		animal.makeSound();

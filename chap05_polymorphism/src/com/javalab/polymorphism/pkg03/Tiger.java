@@ -1,6 +1,6 @@
 package com.javalab.polymorphism.pkg03;
 
-public class Lion extends Animal {
+public class Tiger extends Animal {
 	
 	@Override
 	public void makeSound() {
