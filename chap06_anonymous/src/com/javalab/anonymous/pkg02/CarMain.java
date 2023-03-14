@@ -17,7 +17,7 @@ public class CarMain {
 
 		// 또다른 광폭 타이어 객체를 익명 형태로 정의해서 타이어 교체함. (익명객체-재사용불가)
 		car.tireBig = new Tire() {
-			@Override
+			@Override // 익명 자식
 			public void roll() {
 				System.out.println("새로운 광폭 타이어가 더 힘차게 굴러갑니다.");
 			}
