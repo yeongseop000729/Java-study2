@@ -8,7 +8,6 @@ public class AExample {
 		
 		// A 메소드 호출
 		a.useB();
-		
 
 	}
 
