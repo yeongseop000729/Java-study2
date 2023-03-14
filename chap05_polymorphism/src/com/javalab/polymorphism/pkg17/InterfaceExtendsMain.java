@@ -19,7 +19,7 @@ public class InterfaceExtendsMain {
 		
 		InterfaceC ic = impl;
 		ic.methodA();
-		ic.methodB();
+		ic.methodB(); // InterfaceC 타입 인터페이스에 저장했기 때문에 모든 메소드 호출가능
 		ic.methodC();
 	}
 }
