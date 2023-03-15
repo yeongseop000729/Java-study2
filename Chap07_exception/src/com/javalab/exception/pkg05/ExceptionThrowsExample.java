@@ -19,6 +19,7 @@ public class ExceptionThrowsExample {
 		//	System.out.println("클래스가 존재합니다.");
 		//}
 	}
+	
 	/**
 	 * 호출된 메소드에서 예외가 발생되면 직접 처리하지 않고 자신을 호출한 곳으로 던짐
 	 */
