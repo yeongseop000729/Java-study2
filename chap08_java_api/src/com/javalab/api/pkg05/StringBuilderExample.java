@@ -9,6 +9,8 @@ public class StringBuilderExample {
 		System.out.println(sb); // prints "Hello World Ha Ha"
 		System.out.println();
 
+		// 시험에 나옴
+		
 		// String 차이점
 		String data = "ABC";
 		data += "def";
