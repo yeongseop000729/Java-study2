@@ -19,7 +19,7 @@ public class HashMapExample {
 		System.out.println("총 Entry 수: " + map.size());
 		System.out.println();
 
-		// 키로 값 없기
+		// 키로 값 얻기
 		String key = "홍길동";
 		int value = map.get(key); // 홍길동의 점수
 		System.out.println(key + ": " + value);
@@ -37,7 +37,11 @@ public class HashMapExample {
 		System.out.println();
 
 		// 키로 엔트리 삭제
-		map.remove("홍길동");
+		// map.remove("홍길동");
+		Integer score = map.remove("홍길동"); // 삭제된 키와 매핑되는 값을 반환
+		System.out.println("score : " + score);
+
+		// map.remove("홍길동");
 		System.out.println("총 Entry 수: " + map.size());
 		System.out.println();
 	}
