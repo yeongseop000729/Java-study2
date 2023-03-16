@@ -8,6 +8,6 @@ package com.javalab.api.pkg01;
  * @param <T>
  */
 
-public class Box<T> {
+public class Box<T> { // <- 타입 파라미터로 T사용
 	public T content;
 }
