@@ -9,7 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
- * 버튼 액션 리스터(이벤트 핸들러)
+ * 버튼 액션 리스너(이벤트 핸들러)
  * JFrame을 상속받았고 ActionListener를 구현(상속)함.
  * - https://www.javatpoint.com/java-jlabel
  * - 생성자에서 레이블 관련 설정, 이벤트 핸들러 설정
